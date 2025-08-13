@@ -1,3 +1,4 @@
+import 'package:findit/core/utils/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -27,7 +28,7 @@ class SocialLoginButton extends StatelessWidget {
           title: Text(
             'Login with Google',
             textAlign: TextAlign.center,
-            // style: TextStyles.semiBold16,
+            style: TextStyles.font18Bold.copyWith(fontWeight: FontWeight.w400),
           ),
         ),
       ),

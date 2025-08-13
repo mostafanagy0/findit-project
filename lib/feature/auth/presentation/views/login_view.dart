@@ -1,8 +1,10 @@
+import 'package:findit/core/helpers/extentions.dart';
+import 'package:findit/core/routing/routes.dart';
 import 'package:findit/core/utils/text_style.dart';
 import 'package:findit/core/widgets/custom_botton.dart';
-import 'package:findit/core/widgets/custom_text_field.dart';
-import 'package:findit/feature/auth/presentation/widgets/google_login.dart';
 import 'package:findit/feature/auth/presentation/widgets/custom_account_state.dart';
+import 'package:findit/feature/auth/presentation/widgets/google_login.dart';
+import 'package:findit/feature/auth/presentation/widgets/login_form.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
@@ -25,17 +27,8 @@ class LoginView extends StatelessWidget {
           children: [
             Center(child: Text('Welcome back', style: TextStyles.font22Bold)),
             SizedBox(height: 12),
-            CustomTextFormField(
-              hintText: 'Email',
-              textInputType: TextInputType.emailAddress,
-            ),
-            SizedBox(height: 12),
-            CustomTextFormField(
-              hintText: 'Password',
-              textInputType: TextInputType.emailAddress,
-            ),
-            SizedBox(height: 12),
-            Text('  Forgot password ?', style: TextStyles.font16Narmal),
+            LoginForm(),
+            //Text('  Forgot password ?', style: TextStyles.font16Narmal),
             SizedBox(height: 12),
             CustomButton(text: 'login', onPressed: () {}),
             SizedBox(height: 16),
@@ -44,7 +37,9 @@ class LoginView extends StatelessWidget {
             CustomAccountState(
               text1: 'Don\'t have an account? ',
               text2: 'Sign up',
-              onTap: () {},
+              onTap: () {
+                context.pushNamed(Routes.signupview);
+              },
             ),
           ],
         ),

@@ -1,3 +1,4 @@
+import 'package:findit/core/utils/app_colors.dart';
 import 'package:findit/core/utils/text_style.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,12 @@ class CustomAccountState extends StatelessWidget {
         Text(text1, style: TextStyles.font16Narmal),
         GestureDetector(
           onTap: onTap,
-          child: Text(text2, style: TextStyles.font16Narmal),
+          child: Text(
+            text2,
+            style: TextStyles.font16Narmal.copyWith(
+              color: AppColors.primaryColor,
+            ),
+          ),
         ),
       ],
     );
