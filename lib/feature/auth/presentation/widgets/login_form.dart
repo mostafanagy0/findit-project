@@ -15,7 +15,7 @@ class LoginForm extends StatelessWidget {
         SizedBox(height: 12),
         CustomTextFormField(
           hintText: 'Password',
-          textInputType: TextInputType.emailAddress,
+          textInputType: TextInputType.visiblePassword,
         ),
         SizedBox(height: 12),
       ],

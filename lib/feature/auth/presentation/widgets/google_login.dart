@@ -26,7 +26,7 @@ class SocialLoginButton extends StatelessWidget {
           ),
           leading: SvgPicture.asset('assets/image/google_icon.svg'),
           title: Text(
-            'Login with Google',
+            'Continue with Google',
             textAlign: TextAlign.center,
             style: TextStyles.font18Bold.copyWith(fontWeight: FontWeight.w400),
           ),
