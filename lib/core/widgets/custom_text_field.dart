@@ -9,24 +9,21 @@ class CustomTextFormField extends StatelessWidget {
     this.suffexIcon,
     this.onSaved,
     this.obscureText = false,
+    this.validator,
   });
   final String hintText;
   final TextInputType textInputType;
   final Widget? suffexIcon;
   final void Function(String?)? onSaved;
   final bool obscureText;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       obscureText: obscureText,
       onSaved: onSaved,
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'This field cannot be empty';
-        }
-        return null;
-      },
+      validator: validator,
       keyboardType: textInputType,
       decoration: InputDecoration(
         hintStyle: TextStyles.font16Narmal,
