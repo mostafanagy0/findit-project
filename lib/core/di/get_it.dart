@@ -17,3 +17,4 @@ void setup() {
   );
   getIt.registerFactory<SignupCubit>(() => SignupCubit(getIt()));
 }
+ 
