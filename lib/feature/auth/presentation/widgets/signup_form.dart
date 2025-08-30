@@ -57,7 +57,6 @@ class _SignupFormState extends State<SignupForm> {
           ),
           const SizedBox(height: 12),
           CustomTextFormField(
-            
             hintText: 'Password',
             textInputType: TextInputType.visiblePassword,
             validator: (value) {

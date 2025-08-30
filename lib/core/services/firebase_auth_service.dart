@@ -27,4 +27,25 @@ class FirebaseAuthService {
       throw Exception(e.message ?? 'An unknown error occurred.');
     }
   }
+
+  Future<UserModel> signInWithEmailAndPassword({
+    required String emailAddress,
+    required String password,
+  }) async {
+    try {
+      final credential = await firebaseAuth.signInWithEmailAndPassword(
+        email: emailAddress,
+        password: password,
+      );
+      final firebaseUser = credential.user!;
+      return UserModel.fromFirebaseUser(firebaseUser);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        throw Exception('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        throw Exception('Wrong password provided for that user.');
+      }
+      throw Exception(e.message ?? 'An unknown error occurred.');
+    }
+  }
 }
